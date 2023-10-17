@@ -11,7 +11,7 @@ export default function Signup() {
     width: 0;
     background-color : rgba(0, 0 , 0 ,0.5);
     height:100vh;
-    width:100wh;
+    width:100vw;
     display : grid;
     grid-template-rows:15vh 85vh;
  }`;
@@ -20,7 +20,7 @@ export default function Signup() {
     <Container>
         <BackgroundImage/>
         <div className="content">
-        <Header/>
+        <Header login/>
         <div className="body flex column a-center j-center">
             <div className="text flex column">
                 <h1>Unlimited movies, Tv shows and more </h1>
