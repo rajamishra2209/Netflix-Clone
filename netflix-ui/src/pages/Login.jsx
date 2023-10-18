@@ -62,7 +62,7 @@ export default function Login() {
                 }
               />
 
-              <button onClick={handleLogIn}>Login</button>
+              <button onClick={handleLogIn}>Log In</button>
             </div>
           </div>
         </div>
@@ -110,6 +110,6 @@ const Container = styled.div`
       }
     }
    }
-    }
+  }
   }
 `;
