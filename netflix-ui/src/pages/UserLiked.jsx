@@ -1,4 +1,3 @@
-import axios from "axios";
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +5,7 @@ import { firebaseAuth } from "../utils/firebase-config";
 import Card from "../components/Card";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import { getUserLikedMovies } from "../store";
+import { getUsersLikedMovies } from "../store";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function UserLiked() {
@@ -23,7 +22,7 @@ export default function UserLiked() {
 
   useEffect(() => {
     if (email) {
-      dispatch(getUserLikedMovies(email));
+      dispatch(getUsersLikedMovies(email));
     }
   }, [email]);
 

@@ -1,6 +1,6 @@
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../assets/logo.png";
 import { firebaseAuth } from "../utils/firebase-config";
@@ -14,11 +14,6 @@ export default function Navbar({ isScrolled }) {
     { name: "Movies", link: "/movies" },
     { name: "My List", link: "/mylist" },
   ];
-  
-  const navigate = useNavigate();
-  onAuthStateChanged(firebaseAuth, (currentUser) => {
-    if (!currentUser) navigate("/login");
-  });
 
   return (
     <Container>
@@ -60,9 +55,7 @@ export default function Navbar({ isScrolled }) {
               }}
             />
           </div>
-          <button onClick={() => {
-            alert("hello");
-            signOut(firebaseAuth)}}>
+          <button onClick={() => signOut(firebaseAuth)}>
             <FaPowerOff />
           </button>
         </div>
@@ -91,7 +84,7 @@ const Container = styled.div`
       gap: 2rem;
       .brand {
         img {
-          height:4rem;
+          height: 4rem;
         }
       }
       .links {
